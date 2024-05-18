@@ -149,7 +149,7 @@ h1, h2 {
     color: #333;
 }
 
-/* Additional styling for scroll-up button and other elements if needed */
+/* Scroll-up button */
 .scrollup {
     position: fixed;
     bottom: 20px;
@@ -163,5 +163,61 @@ h1, h2 {
 
 .scrollup__icon {
     font-size: 24px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .nav ul li {
+        display: block;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .home__img {
+        max-width: 200px;
+    }
+
+    .home__title {
+        font-size: 28px;
+    }
+
+    .home__subtitle {
+        font-size: 18px;
+    }
+
+    .home__description {
+        font-size: 16px;
+    }
+
+    .about__img {
+        max-width: 300px;
+    }
+
+    .about__info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about__info div {
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .home__title {
+        font-size: 24px;
+    }
+
+    .home__subtitle {
+        font-size: 16px;
+    }
+
+    .home__description {
+        font-size: 14px;
+    }
+
+    .about__img {
+        max-width: 200px;
+    }
 }
 
