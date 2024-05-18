@@ -114,6 +114,41 @@ h1, h2 {
     background-color: #555;
 }
 
+/* Home section adjustments */
+.home__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.home__img {
+    max-width: 300px; /* Adjust the size as needed */
+    width: 100%;
+    height: auto;
+    margin: 0 auto; /* Center the image */
+}
+
+.home__content {
+    max-width: 600px;
+    margin: 20px;
+}
+
+.home__title {
+    font-size: 36px;
+    color: #333;
+}
+
+.home__subtitle {
+    font-size: 24px;
+    color: #666;
+}
+
+.home__description {
+    margin: 20px 0;
+    color: #333;
+}
+
 /* Additional styling for scroll-up button and other elements if needed */
 .scrollup {
     position: fixed;
