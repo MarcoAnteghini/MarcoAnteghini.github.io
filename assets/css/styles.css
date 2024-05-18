@@ -64,12 +64,22 @@ h1, h2 {
     margin: 20px;
 }
 
+/* General styling for the Home section */
+.home__img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Ensures the image doesn't overflow the container */
+}
+
 .home__img img {
-    max-width: 300px; /* Adjust the size as needed */
     width: 100%;
     height: auto;
-    margin: 0 auto; /* Center the image */
+    max-height: 200px; /* Adjust the height as needed */
+    object-fit: cover; /* Ensures the image covers the entire container while maintaining aspect ratio */
 }
+
 
 .home__title {
     font-size: 36px;
