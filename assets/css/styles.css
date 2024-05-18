@@ -50,6 +50,43 @@ h1, h2 {
     width: 100%;
 }
 
+/* General styling for Home section */
+.home__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.home__content {
+    max-width: 600px;
+    margin: 20px;
+}
+
+.home__img img {
+    max-width: 300px; /* Adjust the size as needed */
+    width: 100%;
+    height: auto;
+    margin: 0 auto; /* Center the image */
+}
+
+.home__title {
+    font-size: 36px;
+    color: #333;
+}
+
+.home__subtitle {
+    font-size: 24px;
+    color: #666;
+}
+
+.home__description {
+    margin: 20px 0;
+    color: #333;
+}
+
+/* General styling for About section */
 .about__img {
     max-width: 400px; /* Adjust the size as needed */
     width: 100%;
@@ -63,6 +100,7 @@ h1, h2 {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+    text-align: center;
 }
 
 .about__data {
@@ -74,6 +112,11 @@ h1, h2 {
     display: flex;
     justify-content: space-around;
     margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.about__info div {
+    margin-bottom: 10px;
 }
 
 .about__info-title {
@@ -114,41 +157,6 @@ h1, h2 {
     background-color: #555;
 }
 
-/* Home section adjustments */
-.home__container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.home__img {
-    max-width: 300px; /* Adjust the size as needed */
-    width: auto;
-    height: auto;
-    margin: 0 auto; /* Center the image */
-}
-
-.home__content {
-    max-width: 600px;
-    margin: 20px;
-}
-
-.home__title {
-    font-size: 36px;
-    color: #333;
-}
-
-.home__subtitle {
-    font-size: 24px;
-    color: #666;
-}
-
-.home__description {
-    margin: 20px 0;
-    color: #333;
-}
-
 /* Scroll-up button */
 .scrollup {
     position: fixed;
@@ -173,8 +181,8 @@ h1, h2 {
         margin: 10px 0;
     }
 
-    .home__img {
-        max-width: 200px;
+    .home__img img {
+        max-width: 80%; /* Reduce the size for tablets */
     }
 
     .home__title {
@@ -190,20 +198,20 @@ h1, h2 {
     }
 
     .about__img {
-        max-width: 300px;
+        max-width: 80%;
     }
 
     .about__info {
         flex-direction: column;
         align-items: center;
     }
-
-    .about__info div {
-        margin-bottom: 10px;
-    }
 }
 
 @media (max-width: 480px) {
+    .home__img img {
+        max-width: 70%; /* Further reduce the size for mobile phones */
+    }
+
     .home__title {
         font-size: 24px;
     }
@@ -217,7 +225,7 @@ h1, h2 {
     }
 
     .about__img {
-        max-width: 200px;
+        max-width: 70%;
     }
 }
 
