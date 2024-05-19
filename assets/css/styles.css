@@ -50,18 +50,105 @@ h1, h2 {
     width: 100%;
 }
 
-/* General styling for Home section */
+/* Contact Section */
+.contact__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.contact__info {
+    margin: 10px 0;
+}
+
+.contact__title {
+    font-size: 24px;
+    margin-top: 10px;
+    color: #333;
+}
+
+.contact__subtitle {
+    font-size: 16px;
+    margin: 5px 0;
+    color: #666;
+}
+
+.contact__link {
+    font-size: 24px;
+    color: #0077b5; /* LinkedIn and GitHub blue */
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.contact__link:hover {
+    color: #005582;
+}
+
+
+/* Home Section */
 .home__container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
+    padding: 20px;
 }
 
-.home__content {
+.home__social {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* Home Section Social Links */
+.home__social-link {
+    display: inline-block;
+    margin-right: 15px; /* Adjust the margin value as needed */
+    font-size: 16px;
+    color: #0077b5; /* LinkedIn blue */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.home__social-link:hover {
+    color: #005582; /* Darker blue for hover effect */
+}
+
+.home__social-icon {
+    font-size: 24px;
+    color: #333;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.home__social-icon:hover {
+    color: #0077b5; /* LinkedIn blue */
+}
+
+.home__data {
     max-width: 600px;
-    margin: 20px;
+}
+
+.home__title {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.home__subtitle {
+    font-size: 24px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.home__description {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 20px;
 }
 
 /* General styling for the Home section */
@@ -166,6 +253,8 @@ h1, h2 {
 .button:hover {
     background-color: #555;
 }
+
+
 
 /* Publications Section */
 .publications__container {
