@@ -6,9 +6,15 @@ body {
     background-color: #f4f4f4;
 }
 
+.nav__logo {
+    color: #fff; /* Makes the logo text white */
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
 .header {
-    background: #333;
-    color: #fff;
+    background: #214b61;
+    color: #246a7c;
     padding: 10px 0;
     text-align: center;
 }
@@ -37,11 +43,11 @@ body {
 }
 
 h1, h2 {
-    color: #333;
+    color: #214b61;
 }
 
 .footer {
-    background: #333;
+    background: #214b61;
     color: #fff;
     text-align: center;
     padding: 10px 0;
@@ -67,7 +73,7 @@ h1, h2 {
 .contact__title {
     font-size: 24px;
     margin-top: 10px;
-    color: #333;
+    color: #0077b5;
 }
 
 .contact__subtitle {
@@ -85,7 +91,7 @@ h1, h2 {
 }
 
 .contact__link:hover {
-    color: #005582;
+    color: #0077b5;
 }
 
 
@@ -346,7 +352,7 @@ h1, h2 {
     align-items: center;
     justify-content: center;
     padding: 10px 20px;
-    background-color: #333;
+    background-color: #214b61;
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
