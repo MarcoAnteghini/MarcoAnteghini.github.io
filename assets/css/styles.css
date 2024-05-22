@@ -4,6 +4,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    text-align: left; 
 }
 
 .nav__logo {
@@ -62,7 +63,7 @@ h1, h2 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center;
+    text-align: left;
     padding: 20px;
 }
 
@@ -101,7 +102,7 @@ h1, h2 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center;
+    text-align: left;
     padding: 20px;
 }
 
@@ -203,7 +204,7 @@ h1, h2 {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    text-align: center;
+    text-align: left;
 }
 
 .about__data {
@@ -275,7 +276,7 @@ h1, h2 {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin: 20px;
     padding: 20px;
-    text-align: center;
+    text-align: left;
     width: 300px;
 }
 
@@ -367,6 +368,58 @@ h1, h2 {
     background-color: #555;
 }
 
+/* Colabs Section */
+.colabs__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.colabs__item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+    width: 300px;
+}
+
+.colabs__img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.colabs__title {
+    font-size: 24px;
+    margin-top: 10px;
+}
+
+.colabs__description {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.button--flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    background-color: #214b61;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.button__icon {
+    margin-left: 10px;
+}
+
+.button--flex:hover {
+    background-color: #555;
+}
+
 
 /* Scroll-up button */
 .scrollup {
@@ -414,7 +467,7 @@ h1, h2 {
 
     .about__info {
         flex-direction: column;
-        align-items: center;
+        align-items: left;
     }
 }
 
