@@ -368,14 +368,9 @@ h1, h2 {
     background-color: #555;
 }
 /* Colabs Section */
-.swiper-container {
-    width: 100%;
-    padding: 20px 0;
-}
-
 .colabs__container {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: space-around;
     text-align: center;
 }
@@ -391,10 +386,10 @@ h1, h2 {
 }
 
 .colabs__img {
-    width: 100%;
-    height: auto;
-    max-width: 200px;
-    margin-bottom: 10px;
+    width: 100%; /* Make the image take the full width of the container */
+    height: auto; /* Maintain the aspect ratio */
+    max-width: 200px; /* Limit the maximum width of the image */
+    margin-bottom: 10px; /* Space between image and text */
 }
 
 .colabs__title {
@@ -403,12 +398,12 @@ h1, h2 {
 }
 
 .colabs__title a {
-    color: #214b61;
+    color: #214b61; /* Set the color for the title links */
     text-decoration: none;
 }
 
 .colabs__title a:hover {
-    color: #005582;
+    color: #005582; /* Darker color for hover effect */
 }
 
 .colabs__description {
@@ -416,14 +411,24 @@ h1, h2 {
     margin: 10px 0;
 }
 
-/* Swiper Navigation Buttons */
-.swiper-button-next,
-.swiper-button-prev {
-    color: #214b61;
+.button--flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    background-color: #214b61;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
-.swiper-pagination-bullet-active {
-    background: #214b61;
+.button__icon {
+    margin-left: 10px;
+}
+
+.button--flex:hover {
+    background-color: #555;
 }
 
 
