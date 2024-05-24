@@ -25,6 +25,9 @@
                     <li class="nav__item">
                         <a href="#contact" class="nav__link">Contact</a>
                     </li>
+                    <li class="nav__item">
+                        <a href="#colabs" class="nav__link">Partners</a>
+                    </li>
                 </ul>
                 <i class="uil uil-times nav__close" id="nav-close"></i>
             </div>
@@ -36,68 +39,169 @@
             </div>
         </nav>
     </header>
-
     <!--==================== MAIN ====================-->
     <main class="main">
-        <!--==================== HOME ====================-->
-        <section class="home section" id="home">
-            <div class="home__container container grid">
-                <div class="home__content grid">
-                    <div class="home__social">
-                        <a href="#" class="home__social-icon">
-                            <i class="uil uil-linkedin-alt"></i>
-                        </a>
-                        <a href="#" class="home__social-icon">
-                            <i class="uil uil-github-alt"></i>
-                        </a>
-                        <a href="#" class="home__social-icon">
-                            <i class="uil uil-twitter-alt"></i>
-                        </a>
-                    </div>
-                    <div class="home__img">
-                        <img src="assets/img/home.jpg" alt="home image">
-                    </div>
-                    <div class="home__data">
-                        <h1 class="home__title">Hi, I’m Marco Anteghini</h1>
-                        <h3 class="home__subtitle">Bioinformatics Consultant</h3>
-                        <p class="home__description">Welcome to my personal website! I specialize in bioinformatics and offer consultancy services to help you analyze and interpret biological data.</p>
-                        <a href="#contact" class="button button--flex">Contact Me <i class="uil uil-message button__icon"></i></a>
-                    </div>
-                </div>
+<!--==================== HOME ====================-->
+<section class="home section" id="home">
+    <div class="home__container container grid">
+        <div class="home__content grid">
+            <div class="home__social">
+                <a href="https://www.linkedin.com/in/marco-anteghini/" class="home__social-link" target="_blank">
+                    LinkedIn 
+                </a>
+                <a href="https://github.com/MarcoAnteghini" class="home__social-link" target="_blank">
+                     GitHub 
+                </a>
             </div>
-        </section>
-
+            <div class="home__data">
+                <h1 class="home__title">Marco Anteghini, PhD</h1>
+                <h3 class="home__subtitle">Bioinformatics Consultant</h3>
+                <p class="home__description">Welcome to my personal website! I specialize in bioinformatics and offer consultancy services to help you analyze and interpret biological data.</p>
+                <a href="#contact" class="button button--flex">Contact Me <i class="uil uil-message button__icon"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
         <!--==================== ABOUT ====================-->
-        <section class="about section" id="about">
-            <h2 class="section__title">About Me</h2>
-            <span class="section__subtitle">My Introduction</span>
-            <div class="about__container container grid">
-                <img src="assets/img/about.jpg" alt="about image" class="about__img">
-                <div class="about__data">
-                    <p class="about__description">I am a bioinformatics consultant with extensive experience in analyzing biological data. I provide expert advice and support to researchers and organizations in the field of bioinformatics.</p>
-                    <div class="about__info">
-                        <div>
-                            <span class="about__info-title">08+</span>
-                            <span class="about__info-name">Years <br> experience</span>
-                        </div>
-                        <div>
-                            <span class="about__info-title">20+</span>
-                            <span class="about__info-name">Completed <br> projects</span>
-                        </div>
-                        <div>
-                            <span class="about__info-title">05</span>
-                            <span class="about__info-name">Companies <br> worked</span>
-                        </div>
-                    </div>
-                    <div class="about__buttons">
-                        <a download="" href="assets/pdf/Marco_Anteghini_CV.pdf" class="button button--flex">Download CV <i class="uil uil-file-download button__icon"></i></a>
-                    </div>
+<section class="about section" id="about">
+    <h2 class="section__title">About Me</h2>
+    <span class="section__subtitle"></span>
+    <div class="about__container container grid">
+        <img src="assets/img/about.jpg" alt="about image" class="about__img">
+        <div class="about__data">
+            <p class="about__description">I am a passionate and experienced bioinformatics consultant with a robust background in both academic and corporate environments. I specialize in developing advanced bioinformatics pipelines for analyzing various kinds of biomedical data, including protein sequences, genomic and nutrigenomic data, microbial data, and clinical data. With a PhD in Bioinformatics from Wageningen University and a Master's degree from the University of Bologna, my expertise spans various research areas, including deep learning-based protein sequence analysis and AI-driven decision support systems. I thrive in team settings and enjoy tackling complex projects to deliver innovative solutions. Currently, I am driving bioinformatics research and operational management at LifeGlimmer GmbH while also contributing to personalized nutrition research at NGB Genetics. Additionally, I am working as a bioinformatics researcher for the BioFold group at the University of Bologna on a project aiming to unravel the genomic information of rare diseases. I am also a co-founder of Bioinform, a non-profit organization focused on training young students in bioinformatics.</p>
+            <div class="about__info">
+                <div>
+                    <span class="about__info-title">05+</span>
+                    <span class="about__info-name">Years <br> experience</span>
+                </div>
+                <div>
+                    <span class="about__info-title">20+</span>
+                    <span class="about__info-name">Completed <br> projects</span>
+                </div>
+                <div>
+                    <span class="about__info-title">05</span>
+                    <span class="about__info-name">Companies <br> worked</span>
                 </div>
             </div>
-        </section>
+            <div class="about__buttons">
+                <a download="" href="assets/pdf/Marco_Anteghini_CV.pdf" class="button button--flex">Download CV <i class="uil uil-file-download button__icon"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
 
-        <!-- Other sections (Skills, Projects, Contact) follow the same structure -->
-    </main>
+<!--==================== PROJECTS ====================-->
+<section class="projects section" id="projects">
+    <h2 class="section__title">Projects</h2>
+    <span class="section__subtitle">My Work</span>
+    <div class="projects__container container grid">
+        <!-- Project 1 -->
+        <div class="project__item">
+            <img src="assets/img/project1.jpg" alt="Project 1" class="project__img">
+            <h3 class="project__title">Project Title 1</h3>
+            <p class="project__description">A brief description of the project, explaining what it is about and the technologies used.</p>
+            <a href="https://github.com/MarcoAnteghini/project1" class="button button--flex" target="_blank">View Project <i class="uil uil-external-link-alt button__icon"></i></a>
+        </div>
+        <!-- Project 2 -->
+        <div class="project__item">
+            <img src="assets/img/project2.jpg" alt="Project 2" class="project__img">
+            <h3 class="project__title">Project Title 2</h3>
+            <p class="project__description">A brief description of the project, explaining what it is about and the technologies used.</p>
+            <a href="https://github.com/MarcoAnteghini/project2" class="button button--flex" target="_blank">View Project <i class="uil uil-external-link-alt button__icon"></i></a>
+        </div>
+        <!-- Add more projects as needed -->
+    </div>
+</section>
+
+<!--==================== PUBLICATIONS ====================-->
+<section class="publications section" id="publications">
+    <h2 class="section__title">Relevant Publications</h2>
+    <span class="section__subtitle">My Research Work</span>
+    <div class="publications__container container grid">
+        <!-- Publication 1 -->
+        <div class="publication__item">
+            <h3 class="publication__title">Publication Title 1</h3>
+            <p class="publication__description">A brief description of the publication, explaining the research focus and findings.</p>
+            <a href="https://doi.org/10.1234/example" class="button button--flex" target="_blank">View Publication <i class="uil uil-external-link-alt button__icon"></i></a>
+        </div>
+        <!-- Publication 2 -->
+        <div class="publication__item">
+            <h3 class="publication__title">Publication Title 2</h3>
+            <p class="publication__description">A brief description of the publication, explaining the research focus and findings.</p>
+            <a href="https://doi.org/10.5678/example" class="button button--flex" target="_blank">View Publication <i class="uil uil-external-link-alt button__icon"></i></a>
+        </div>
+        <!-- Add more publications as needed -->
+    </div>
+    <div class="google-scholar">
+        <a href="https://scholar.google.com/citations?user=Vzhq60kAAAAJ&hl=it" class="button button--flex" target="_blank">My Google Scholar Profile <i class="uil uil-external-link-alt button__icon"></i></a>
+    </div>
+</section>
+        
+<!--==================== COLABS ====================-->
+<section class="colabs section" id="colabs">
+    <h2 class="section__title">Partners</h2>
+    <span class="section__subtitle"></span>
+    <div class="colabs__container container grid">
+        <!-- Partner 1 -->
+        <div class="colabs__item">
+            <img src="assets/img/logoBiofold.png" alt="BioFold" class="colabs__img">
+            <h3 class="colabs__title">
+                <a href="https://biofold.org/" target="_blank">BioFold</a>
+            </h3>
+            <p class="colabs__description">Research group at the University of Bologna</p>
+        </div>
+        <!-- Partner 2 -->
+        <div class="colabs__item">
+            <img src="assets/img/bioinform.png" alt="Bioinform" class="colabs__img">
+            <h3 class="colabs__title">
+                <a href="https://bioinform-org.github.io/" target="_blank">BioINForm</a>
+            </h3>
+            <p class="colabs__description">Non-profit focused on bioinformatics training</p>
+        </div>
+        <!-- Partner 3 -->
+        <div class="colabs__item">
+            <img src="assets/img/logo-ngb.png" alt="NGB" class="colabs__img">
+            <h3 class="colabs__title">
+                <a href="https://www.ngbgenetics.com/" target="_blank">NGB Genetics</a>
+            </h3>
+            <p class="colabs__description">Company specializing in genetic analyses</p>
+        </div>
+        <!-- Partner 3 -->
+        <div class="colabs__item">
+            <img src="assets/img/LG-logo.png" alt="LG" class="colabs__img">
+            <h3 class="colabs__title">
+                <a href="https://www.lifeglimmer.com/" target="_blank">LifeGlimmer GmbH</a>
+            </h3>
+            <p class="colabs__description">Company specializing in advanced in-silico solutions for biological data</p>
+        </div>
+    </div>
+</section>
+
+<!--==================== CONTACT ====================-->
+<section class="contact section" id="contact">
+    <h2 class="section__title">Get in Touch</h2>
+    <span class="section__subtitle"></span>
+    <div class="contact__container container grid">
+        <div class="contact__info">
+            <h3 class="contact__title">Email</h3>
+            <span class="contact__subtitle">marcoanteghini@gmail.com</span>
+            <span class="contact__subtitle">m.anteghini@ngbgenetics.com</span>
+        </div>
+        <div class="contact__info">
+            <h3 class="contact__title"></h3>
+            <a href="https://www.linkedin.com/in/marco-anteghini/" class="contact__link" target="_blank">
+                LinkedIn
+            </a>
+        </div>
+        <div class="contact__info">
+            <h3 class="contact__title"></h3>
+            <a href="https://github.com/MarcoAnteghini" class="contact__link" target="_blank">
+                GitHub
+            </a>
+        </div>
+    </div>
+</section>
 
     <!--==================== FOOTER ====================-->
     <footer class="footer">
@@ -115,10 +219,10 @@
                 </li>
             </ul>
             <div class="footer__social">
-                <a href="#" class="footer__social-link">
+                <a href="https://www.linkedin.com/in/marco-anteghini/" class="footer__social-link" target="_blank">
                     <i class="uil uil-linkedin-alt"></i>
                 </a>
-                <a href="#" class="footer__social-link">
+                <a href="https://github.com/MarcoAnteghini" class="footer__social-link" target="_blank">
                     <i class="uil uil-github-alt"></i>
                 </a>
                 <a href="#" class="footer__social-link">
@@ -138,4 +242,3 @@
     <script src="assets/js/main.js"></script>
 </body>
 </html>
-
