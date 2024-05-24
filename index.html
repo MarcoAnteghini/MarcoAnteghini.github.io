@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marco Anteghini - Bioinformatics Consultant</title>
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 </head>
 <body>
     <!--==================== HEADER ====================-->
@@ -142,39 +143,46 @@
 <section class="colabs section" id="colabs">
     <h2 class="section__title">Partners</h2>
     <span class="section__subtitle"></span>
-    <div class="colabs__container container grid">
-        <!-- Partner 1 -->
-        <div class="colabs__item">
-            <img src="assets/img/logoBiofold.png" alt="BioFold" class="colabs__img">
-            <h3 class="colabs__title">
-                <a href="https://biofold.org/" target="_blank">BioFold</a>
-            </h3>
-            <p class="colabs__description">Research group at the University of Bologna</p>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <!-- Partner 1 -->
+            <div class="swiper-slide colabs__item">
+                <img src="assets/img/logoBiofold.png" alt="BioFold" class="colabs__img">
+                <h3 class="colabs__title">
+                    <a href="https://biofold.org/" target="_blank">BioFold</a>
+                </h3>
+                <p class="colabs__description">Research group at the University of Bologna</p>
+            </div>
+            <!-- Partner 2 -->
+            <div class="swiper-slide colabs__item">
+                <img src="assets/img/bioinform.png" alt="Bioinform" class="colabs__img">
+                <h3 class="colabs__title">
+                    <a href="https://bioinform-org.github.io/" target="_blank">BioINForm</a>
+                </h3>
+                <p class="colabs__description">Non-profit focused on bioinformatics training</p>
+            </div>
+            <!-- Partner 3 -->
+            <div class="swiper-slide colabs__item">
+                <img src="assets/img/logo-ngb.png" alt="NGB" class="colabs__img">
+                <h3 class="colabs__title">
+                    <a href="https://www.ngbgenetics.com/" target="_blank">NGB Genetics</a>
+                </h3>
+                <p class="colabs__description">Company specializing in genetic analyses</p>
+            </div>
+            <!-- Partner 4 -->
+            <div class="swiper-slide colabs__item">
+                <img src="assets/img/LG-logo.png" alt="LG" class="colabs__img">
+                <h3 class="colabs__title">
+                    <a href="https://www.lifeglimmer.com/" target="_blank">LifeGlimmer GmbH</a>
+                </h3>
+                <p class="colabs__description">Company specializing in advanced in-silico solutions for biological data</p>
+            </div>
         </div>
-        <!-- Partner 2 -->
-        <div class="colabs__item">
-            <img src="assets/img/bioinform.png" alt="Bioinform" class="colabs__img">
-            <h3 class="colabs__title">
-                <a href="https://bioinform-org.github.io/" target="_blank">BioINForm</a>
-            </h3>
-            <p class="colabs__description">Non-profit focused on bioinformatics training</p>
-        </div>
-        <!-- Partner 3 -->
-        <div class="colabs__item">
-            <img src="assets/img/logo-ngb.png" alt="NGB" class="colabs__img">
-            <h3 class="colabs__title">
-                <a href="https://www.ngbgenetics.com/" target="_blank">NGB Genetics</a>
-            </h3>
-            <p class="colabs__description">Company specializing in genetic analyses</p>
-        </div>
-        <!-- Partner 3 -->
-        <div class="colabs__item">
-            <img src="assets/img/LG-logo.png" alt="LG" class="colabs__img">
-            <h3 class="colabs__title">
-                <a href="https://www.lifeglimmer.com/" target="_blank">LifeGlimmer GmbH</a>
-            </h3>
-            <p class="colabs__description">Company specializing in advanced in-silico solutions for biological data</p>
-        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- Add Navigation -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
     </div>
 </section>
 
@@ -240,5 +248,37 @@
 
     <!--==================== MAIN JS ====================-->
     <script src="assets/js/main.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+        <script>
+    var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+            640: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+            },
+            768: {
+                slidesPerView: 2,
+                spaceBetween: 40,
+            },
+            1024: {
+                slidesPerView: 3,
+                spaceBetween: 50,
+            },
+        }
+    });
+</script>
+
 </body>
 </html>
