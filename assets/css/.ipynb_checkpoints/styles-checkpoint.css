@@ -4,11 +4,18 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    text-align: left; 
+}
+
+.nav__logo {
+    color: #fff; /* Makes the logo text white */
+    text-decoration: none;
+    font-size: 1.5rem;
 }
 
 .header {
-    background: #333;
-    color: #fff;
+    background: #214b61;
+    color: #246a7c;
     padding: 10px 0;
     text-align: center;
 }
@@ -37,11 +44,11 @@ body {
 }
 
 h1, h2 {
-    color: #333;
+    color: #214b61;
 }
 
 .footer {
-    background: #333;
+    background: #214b61;
     color: #fff;
     text-align: center;
     padding: 10px 0;
@@ -50,26 +57,122 @@ h1, h2 {
     width: 100%;
 }
 
-/* General styling for Home section */
-.home__container {
+/* Contact Section */
+.contact__container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
+    padding: 20px;
 }
 
-.home__content {
+.contact__info {
+    margin: 10px 0;
+}
+
+.contact__title {
+    font-size: 24px;
+    margin-top: 10px;
+    color: #0077b5;
+}
+
+.contact__subtitle {
+    font-size: 16px;
+    margin: 5px 0;
+    color: #666;
+}
+
+.contact__link {
+    font-size: 16px;
+    color: #0077b5; /* LinkedIn and GitHub blue */
+    text-decoration: none;
+    margin: 5px 0;
+    transition: color 0.3s;
+}
+
+.contact__link:hover {
+    color: #005582; /* Darker blue for hover effect */
+}
+
+/* Home Section */
+.home__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    padding: 20px;
+}
+
+.home__social {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* Home Section Social Links */
+.home__social-link {
+    display: inline-block;
+    margin-right: 15px; /* Adjust the margin value as needed */
+    font-size: 16px;
+    color: #0077b5; /* LinkedIn blue */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.home__social-link:hover {
+    color: #005582; /* Darker blue for hover effect */
+}
+
+.home__social-icon {
+    font-size: 24px;
+    color: #333;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.home__social-icon:hover {
+    color: #0077b5; /* LinkedIn blue */
+}
+
+.home__data {
     max-width: 600px;
-    margin: 20px;
+}
+
+.home__title {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.home__subtitle {
+    font-size: 24px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.home__description {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* General styling for the Home section */
+.home__img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Ensures the image doesn't overflow the container */
 }
 
 .home__img img {
-    max-width: 300px; /* Adjust the size as needed */
     width: 100%;
     height: auto;
-    margin: 0 auto; /* Center the image */
+    max-height: 200px; /* Adjust the height as needed */
+    object-fit: cover; /* Ensures the image covers the entire container while maintaining aspect ratio */
 }
+
 
 .home__title {
     font-size: 36px;
@@ -100,7 +203,7 @@ h1, h2 {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    text-align: center;
+    text-align: left;
 }
 
 .about__data {
@@ -157,6 +260,177 @@ h1, h2 {
     background-color: #555;
 }
 
+
+
+/* Publications Section */
+.publications__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.publication__item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    padding: 20px;
+    text-align: left;
+    width: 300px;
+}
+
+.publication__title {
+    font-size: 24px;
+    margin-top: 10px;
+}
+
+.publication__description {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.google-scholar {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.button--flex {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.button__icon {
+    margin-left: 10px;
+}
+
+.button--flex:hover {
+    background-color: #555;
+}
+
+
+/* Projects Section */
+.projects__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.project__item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+    width: 300px;
+}
+
+.project__img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.project__title {
+    font-size: 24px;
+    margin-top: 10px;
+}
+
+.project__description {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.button--flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    background-color: #214b61;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.button__icon {
+    margin-left: 10px;
+}
+
+.button--flex:hover {
+    background-color: #555;
+}
+/* Colabs Section */
+.colabs__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.colabs__item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+    width: 300px;
+}
+
+.colabs__img {
+    width: 100%; /* Make the image take the full width of the container */
+    height: auto; /* Maintain the aspect ratio */
+    max-width: 200px; /* Limit the maximum width of the image */
+    margin-bottom: 10px; /* Space between image and text */
+}
+
+.colabs__title {
+    font-size: 24px;
+    margin-top: 10px;
+}
+
+.colabs__title a {
+    color: #214b61; /* Set the color for the title links */
+    text-decoration: none;
+}
+
+.colabs__title a:hover {
+    color: #005582; /* Darker color for hover effect */
+}
+
+.colabs__description {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.button--flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    background-color: #214b61;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.button__icon {
+    margin-left: 10px;
+}
+
+.button--flex:hover {
+    background-color: #555;
+}
+
+
 /* Scroll-up button */
 .scrollup {
     position: fixed;
@@ -203,7 +477,7 @@ h1, h2 {
 
     .about__info {
         flex-direction: column;
-        align-items: center;
+        align-items: left;
     }
 }
 
