@@ -8,37 +8,40 @@
 </head>
 <body>
     <!--==================== HEADER ====================-->
-    <header class="header" id="header">
-        <nav class="nav container">
-            <a href="#" class="nav__logo">Marco Anteghini</a>
-            <div class="nav__menu" id="nav-menu">
-                <ul class="nav__list grid">
-                    <li class="nav__item">
-                        <a href="#home" class="nav__link active-link">Home</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#about" class="nav__link">About</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#projects" class="nav__link">Projects</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#contact" class="nav__link">Contact</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#colabs" class="nav__link">Partners</a>
-                    </li>
-                </ul>
-                <i class="uil uil-times nav__close" id="nav-close"></i>
+<header class="header" id="header">
+    <nav class="nav container">
+        <a href="#" class="nav__logo">Marco Anteghini</a>
+        <div class="nav__menu" id="nav-menu">
+            <ul class="nav__list grid">
+                <li class="nav__item">
+                    <a href="#home" class="nav__link active-link">Home</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#about" class="nav__link">About</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#projects" class="nav__link">Projects</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#publications" class="nav__link">Publications</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#colabs" class="nav__link">Partners</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#contact" class="nav__link">Contact</a>
+                </li>
+            </ul>
+            <i class="uil uil-times nav__close" id="nav-close"></i>
+        </div>
+        <div class="nav__btns">
+            <i class="uil uil-moon change-theme" id="theme-button"></i>
+            <div class="nav__toggle" id="nav-toggle">
+                <i class="uil uil-apps"></i>
             </div>
-            <div class="nav__btns">
-                <i class="uil uil-moon change-theme" id="theme-button"></i>
-                <div class="nav__toggle" id="nav-toggle">
-                    <i class="uil uil-apps"></i>
-                </div>
-            </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
+</header>
     <!--==================== MAIN ====================-->
     <main class="main">
 <!--==================== HOME ====================-->
@@ -120,7 +123,7 @@
 
 <!--==================== PUBLICATIONS ====================-->
 <section class="publications section" id="publications">
-    <h2 class="section__title">Relevant Publications</h2>
+    <h2 class="section__title">Publications</h2>
     <span class="section__subtitle"></span>
     <div class="publications__container container grid">
         <!-- Publication 1 -->
@@ -160,7 +163,7 @@
     <div class="colabs__container container grid">
         <!-- Partner 1 -->
         <div class="colabs__item">
-            <img src="assets/img/logoBiofold.png" alt="BioFold" class="colabs__img">
+            <!--<img src="assets/img/logoBiofold.png" alt="BioFold" class="colabs__img">-->
             <h3 class="colabs__title">
                 <a href="https://biofold.org/" target="_blank">BioFold</a>
             </h3>
@@ -168,7 +171,7 @@
         </div>
         <!-- Partner 2 -->
         <div class="colabs__item">
-            <img src="assets/img/bioinform.png" alt="Bioinform" class="colabs__img">
+            <!--<img src="assets/img/bioinform.png" alt="Bioinform" class="colabs__img">-->
             <h3 class="colabs__title">
                 <a href="https://bioinform-org.github.io/" target="_blank">BioINForm</a>
             </h3>
@@ -176,7 +179,7 @@
         </div>
         <!-- Partner 3 -->
         <div class="colabs__item">
-            <img src="assets/img/logo-ngb.png" alt="NGB" class="colabs__img">
+            <!--<img src="assets/img/logo-ngb.png" alt="NGB" class="colabs__img">-->
             <h3 class="colabs__title">
                 <a href="https://www.ngbgenetics.com/" target="_blank">NGB Genetics</a>
             </h3>
@@ -184,14 +187,14 @@
         </div>
         <!-- Partner 4 -->
         <div class="colabs__item">
-            <img src="assets/img/LG-logo.png" alt="LG" class="colabs__img">
+            <!--<img src="assets/img/LG-logo.png" alt="LG" class="colabs__img">-->
             <h3 class="colabs__title">
                 <a href="https://www.lifeglimmer.com/" target="_blank">LifeGlimmer GmbH</a>
             </h3>
             <p class="colabs__description">Company specializing in advanced in-silico solutions for biological data</p>
         </div>
          <div class="colabs__item">
-            <img src="assets/img/WUR-logo.svg" alt="WUR" class="colabs__img">
+            <!--<img src="assets/img/WUR-logo.svg" alt="WUR" class="colabs__img">-->
             <h3 class="colabs__title">
                 <a href="https://www.lifeglimmer.com/" target="_blank">Wageningen University and Research</a>
             </h3>
@@ -240,6 +243,13 @@
                 <a href="#projects" class="footer__link">Projects</a>
             </li>
             <li>
+                <a href="#publications" class="footer__link">Publications</a>
+            </li>
+             
+            <li>
+                <a href="#colabs" class="footer__link">Partners</a>
+            </li>
+            <li>
                 <a href="#contact" class="footer__link">Contact</a>
             </li>
         </ul>
@@ -255,7 +265,7 @@
             </a>
         </div>
         <div class="footer__legal">
-            <p class="footer__text">P.IVA: IT04150771204</p>
+            <p class="footer__text">P.IVA (VAT): IT04150771204</p>
             <p class="footer__text">CODICE DESTINATARIO: KRRH6B9</p>
         </div>
         <span class="footer__copy">&#169; Marco Anteghini. All rights reserved</span>
