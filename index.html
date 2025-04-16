@@ -6,38 +6,36 @@
     <title>Marco Anteghini - Bioinformatics Consultant</title>
     <link rel="stylesheet" href="assets/css/styles.css">
     <style>
-        /* Additional styling for section colors */
+        /* Reset section backgrounds to white */
         .section {
             padding: 2rem 0 4rem;
             position: relative;
+            background-color: #ffffff; /* White background for all sections */
         }
         
-        .home {
-            background-color: #e6f2ff; /* Light blue */
+        /* Blue colors only for clickable elements */
+        .nav__link, .home__social-link, .button, .footer__link, .footer__social-link, .contact__link, .colabs__title a {
+            color: #0066cc; /* Dark blue for links */
+            transition: color 0.3s ease;
         }
         
-        .about {
-            background-color: #cce6ff; /* Slightly darker blue */
+        .nav__link:hover, .home__social-link:hover, .button:hover, .footer__link:hover, 
+        .footer__social-link:hover, .contact__link:hover, .colabs__title a:hover {
+            color: #4d94ff; /* Lighter blue on hover */
         }
         
-        .projects {
-            background-color: #b3d9ff; /* Medium blue */
+        .button {
+            background-color: #0066cc; /* Dark blue background for buttons */
+            color: #ffffff; /* White text for buttons */
         }
         
-        .publications {
-            background-color: #99ccff; /* Medium-dark blue */
-        }
-        
-        .colabs {
-            background-color: #80bfff; /* Darker blue */
-        }
-        
-        .contact {
-            background-color: #66b3ff; /* Darkest blue */
+        .button:hover {
+            background-color: #4d94ff; /* Lighter blue on hover */
+            color: #ffffff;
         }
         
         .section__title {
-            color: #0066cc; /* Dark blue for titles */
+            color: #333333; /* Dark gray for titles instead of blue */
         }
         
         /* Publication image styling */
@@ -60,6 +58,63 @@
         .publication__item:hover {
             transform: translateY(-5px);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Interactive elements */
+        .publication__item {
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .publication__overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 102, 204, 0.8);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        .publication__item:hover .publication__overlay {
+            opacity: 1;
+        }
+        
+        /* Tooltip styling */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 200px;
+            background-color: #0066cc;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -100px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
         }
     </style>
 </head>
@@ -184,36 +239,64 @@
     <span class="section__subtitle"></span>
     <div class="publications__container container grid">
         <!-- Publication 1 (New) -->
-        <div class="publication__item">
+        <div class="publication__item" onclick="window.open('https://doi.org/10.1016/j.compbiomed.2025.110064', '_blank')">
             <img src="assets/img/hdwgt.jpg" alt="AI applications to biological networks and sequences" class="publication__img">
             <h3 class="publication__title">How did we get there? AI applications to biological networks and sequences</h3>
             <p class="publication__description">Published in Computational Biology and Medicine, April 2025</p>
             <a href="https://doi.org/10.1016/j.compbiomed.2025.110064" class="button button--flex" target="_blank">View Publication <i class="uil uil-external-link-alt button__icon"></i></a>
+            <div class="publication__overlay">
+                <h4>AI applications to biological networks and sequences</h4>
+                <p>This paper explores how AI is driving biomedical science, enabling the processing of large datasets and prediction of complex biological phenomena.</p>
+                <span>Click to read more</span>
+            </div>
         </div>
         <!-- Publication 2 -->
-        <div class="publication__item">
+        <div class="publication__item" onclick="window.open('https://doi.org/10.3390/ijms22126409', '_blank')">
             <img src="assets/img/inpero.png" alt="In-pero: Deep learning for peroxisomal proteins" class="publication__img" onerror="this.src='assets/img/publication_placeholder.png'; this.onerror=null;">
             <h3 class="publication__title">In-pero: Exploiting deep learning embeddings of protein sequences to predict the localisation of peroxisomal proteins</h3>
             <p class="publication__description">Published in International Journal of Molecular Sciences, 2021</p>
             <a href="https://doi.org/10.3390/ijms22126409" class="button button--flex" target="_blank">View Publication <i class="uil uil-external-link-alt button__icon"></i></a>
+            <div class="publication__overlay">
+                <h4>In-pero: Deep learning for protein localization</h4>
+                <p>This research uses deep learning embeddings to predict the localization of peroxisomal proteins with high accuracy.</p>
+                <span>Click to read more</span>
+            </div>
         </div>
         <!-- Publication 3 -->
-        <div class="publication__item">
+        <div class="publication__item" onclick="window.open('https://doi.org/10.1016/j.csbj.2022.11.058', '_blank')">
+            <img src="assets/img/organelX.jpg" alt="OrganelX web server" class="publication__img">
             <h3 class="publication__title">OrganelX web server for sub-peroxisomal and sub-mitochondrial protein localization and peroxisomal target signal detection</h3>
             <p class="publication__description">Published in Computational and Structural Biotechnology Journal, 2022</p>
             <a href="https://doi.org/10.1016/j.csbj.2022.11.058" class="button button--flex" target="_blank">View Publication <i class="uil uil-external-link-alt button__icon"></i></a>
+            <div class="publication__overlay">
+                <h4>OrganelX: Advanced protein localization</h4>
+                <p>A web server for precise sub-organelle protein localization and peroxisomal target signal detection using machine learning.</p>
+                <span>Click to read more</span>
+            </div>
         </div>
         <!-- Publication 4 -->
-        <div class="publication__item">
+        <div class="publication__item" onclick="window.open('https://doi.org/10.1002/jcb.30490', '_blank')">
+            <img src="assets/img/portpred.jpg" alt="PortPred: Transporter protein prediction" class="publication__img">
             <h3 class="publication__title">PortPred: exploiting deep learning embeddings of amino acid sequences for the identification of transporter proteins and their substrates</h3>
             <p class="publication__description">Published in Journal of Cellular Biochemistry, 2023</p>
             <a href="https://doi.org/10.1002/jcb.30490" class="button button--flex" target="_blank">View Publication <i class="uil uil-external-link-alt button__icon"></i></a>
+            <div class="publication__overlay">
+                <h4>PortPred: Transporter protein prediction</h4>
+                <p>This tool uses deep learning embeddings to identify transporter proteins and predict their substrates with high accuracy.</p>
+                <span>Click to read more</span>
+            </div>
         </div>
          <!-- Publication 5 -->
-        <div class="publication__item">
+        <div class="publication__item" onclick="window.open('https://doi.org/10.18174/635214', '_blank')">
+            <img src="assets/img/infographic.jpeg" alt="Thesis on peroxisomal proteins" class="publication__img">
             <h3 class="publication__title">Revealing function, interactions, and localization of peroxisomal proteins using deep learning-based approaches</h3>
             <p class="publication__description">PhD Thesis, Wageningen University, 2022</p>
             <a href="https://doi.org/10.18174/635214" class="button button--flex" target="_blank">View Publication <i class="uil uil-external-link-alt button__icon"></i></a>
+            <div class="publication__overlay">
+                <h4>PhD Thesis: Deep learning for peroxisomal proteins</h4>
+                <p>This comprehensive thesis explores how deep learning approaches can reveal function, interactions, and localization of peroxisomal proteins.</p>
+                <span>Click to read more</span>
+            </div>
         </div>
         <!-- Add more publications as needed -->
     </div>
@@ -231,52 +314,58 @@
     <span class="section__subtitle"></span>
     <div class="colabs__container container grid">
         <!-- Partner 1 -->
-        <div class="colabs__item">
+        <div class="colabs__item tooltip">
             <!--<img src="assets/img/logoBiofold.png" alt="BioFold" class="colabs__img">-->
             <h3 class="colabs__title">
                 <a href="https://biofold.org/" target="_blank">BioFold</a>
             </h3>
             <p class="colabs__description">Bioinformatics research group at the University of Bologna</p>
+            <span class="tooltiptext">Research group focused on protein structure prediction and analysis</span>
         </div>
         <!-- Partner 2 -->
-        <div class="colabs__item">
+        <div class="colabs__item tooltip">
             <!--<img src="assets/img/bioinform.png" alt="Bioinform" class="colabs__img">-->
             <h3 class="colabs__title">
                 <a href="https://bioinform-org.github.io/" target="_blank">BioINForm</a>
             </h3>
             <p class="colabs__description">Non-profit focused on bioinformatics training</p>
+            <span class="tooltiptext">Training over 200 students in bioinformatics through 5-day intensive programs</span>
         </div>
         <!-- Partner 3 -->
-        <div class="colabs__item">
+        <div class="colabs__item tooltip">
             <!--<img src="assets/img/logo-ngb.png" alt="NGB" class="colabs__img">-->
             <h3 class="colabs__title">
                 <a href="https://www.ngbgenetics.com/" target="_blank">NGB Genetics</a>
             </h3>
             <p class="colabs__description">Company specializing in genetic analyses</p>
+            <span class="tooltiptext">Providing personalized nutrition recommendations based on genetic analysis</span>
         </div>
         <!-- Partner 4 -->
-        <div class="colabs__item">
+        <div class="colabs__item tooltip">
             <!--<img src="assets/img/LG-logo.png" alt="LG" class="colabs__img">-->
             <h3 class="colabs__title">
                 <a href="https://www.lifeglimmer.com/" target="_blank">LifeGlimmer GmbH</a>
             </h3>
             <p class="colabs__description">Company specializing in advanced in-silico solutions for biological data</p>
+            <span class="tooltiptext">Developing cutting-edge bioinformatics solutions for industry and academia</span>
         </div>
          <!-- Partner 5 -->
-         <div class="colabs__item">
+         <div class="colabs__item tooltip">
             <!--<img src="assets/img/WUR-logo.svg" alt="WUR" class="colabs__img">-->
             <h3 class="colabs__title">
-                <a href="https://www.lifeglimmer.com/" target="_blank">Wageningen University and Research</a>
+                <a href="https://www.wur.nl/en/research-results/chair-groups/agrotechnology-and-food-sciences/laboratory-of-systems-and-synthetic-biology.htm" target="_blank">Wageningen University and Research</a>
             </h3>
             <p class="colabs__description">Laboratory of Systems and Synthetic Biology (SSB)</p>
+            <span class="tooltiptext">Collaboration on deep learning approaches for protein function prediction</span>
         </div>
         <!-- Partner 6 -->
-         <div class="colabs__item">
+         <div class="colabs__item tooltip">
             <!--<img src="assets/img/WUR-logo.svg" alt="WUR" class="colabs__img">-->
             <h3 class="colabs__title">
                 <a href="https://www.clicon.it/" target="_blank">CliCon</a>
             </h3>
             <p class="colabs__description">Company specializing in generating real-world evidence, outcome research and health technology assessment through big data collection, processing, and analysis</p>
+            <span class="tooltiptext">Collaboration on healthcare data analysis and predictive modeling</span>
         </div>
     </div>
 </section>
@@ -356,6 +445,49 @@
     <!--==================== MAIN JS ====================-->
     <script src="assets/js/main.js"></script>
     <!-- Swiper JS -->
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>    
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    
+    <!-- Interactive elements script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add smooth scrolling to all links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        window.scrollTo({
+                            top: target.offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Add active class to nav items on scroll
+            window.addEventListener('scroll', function() {
+                const sections = document.querySelectorAll('section');
+                const navLinks = document.querySelectorAll('.nav__link');
+                
+                let current = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (pageYOffset >= sectionTop - 60) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active-link');
+                    if (link.getAttribute('href') === '#' + current) {
+                        link.classList.add('active-link');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
