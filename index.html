@@ -5,6 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marco Anteghini - Bioinformatics Consultant</title>
     <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        /* Additional styling for section colors */
+        .section {
+            padding: 2rem 0 4rem;
+            position: relative;
+        }
+        
+        .home {
+            background-color: #e6f2ff; /* Light blue */
+        }
+        
+        .about {
+            background-color: #cce6ff; /* Slightly darker blue */
+        }
+        
+        .projects {
+            background-color: #b3d9ff; /* Medium blue */
+        }
+        
+        .publications {
+            background-color: #99ccff; /* Medium-dark blue */
+        }
+        
+        .colabs {
+            background-color: #80bfff; /* Darker blue */
+        }
+        
+        .contact {
+            background-color: #66b3ff; /* Darkest blue */
+        }
+        
+        .section__title {
+            color: #0066cc; /* Dark blue for titles */
+        }
+        
+        /* Publication image styling */
+        .publication__img {
+            width: 100%;
+            max-height: 200px;
+            object-fit: contain;
+            margin-bottom: 1rem;
+            border-radius: 0.5rem;
+        }
+        
+        .publication__item {
+            background-color: #ffffff;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .publication__item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        }
+    </style>
 </head>
 <body>
     <!--==================== HEADER ====================-->
@@ -128,27 +185,34 @@
     <div class="publications__container container grid">
         <!-- Publication 1 (New) -->
         <div class="publication__item">
+            <img src="assets/img/hdwgt.jpg" alt="AI applications to biological networks and sequences" class="publication__img">
             <h3 class="publication__title">How did we get there? AI applications to biological networks and sequences</h3>
+            <p class="publication__description">Published in Computational Biology and Medicine, April 2025</p>
             <a href="https://doi.org/10.1016/j.compbiomed.2025.110064" class="button button--flex" target="_blank">View Publication <i class="uil uil-external-link-alt button__icon"></i></a>
         </div>
         <!-- Publication 2 -->
         <div class="publication__item">
+            <img src="assets/img/inpero.png" alt="In-pero: Deep learning for peroxisomal proteins" class="publication__img" onerror="this.src='assets/img/publication_placeholder.png'; this.onerror=null;">
             <h3 class="publication__title">In-pero: Exploiting deep learning embeddings of protein sequences to predict the localisation of peroxisomal proteins</h3>
+            <p class="publication__description">Published in International Journal of Molecular Sciences, 2021</p>
             <a href="https://doi.org/10.3390/ijms22126409" class="button button--flex" target="_blank">View Publication <i class="uil uil-external-link-alt button__icon"></i></a>
         </div>
         <!-- Publication 3 -->
         <div class="publication__item">
             <h3 class="publication__title">OrganelX web server for sub-peroxisomal and sub-mitochondrial protein localization and peroxisomal target signal detection</h3>
+            <p class="publication__description">Published in Computational and Structural Biotechnology Journal, 2022</p>
             <a href="https://doi.org/10.1016/j.csbj.2022.11.058" class="button button--flex" target="_blank">View Publication <i class="uil uil-external-link-alt button__icon"></i></a>
         </div>
         <!-- Publication 4 -->
         <div class="publication__item">
             <h3 class="publication__title">PortPred: exploiting deep learning embeddings of amino acid sequences for the identification of transporter proteins and their substrates</h3>
+            <p class="publication__description">Published in Journal of Cellular Biochemistry, 2023</p>
             <a href="https://doi.org/10.1002/jcb.30490" class="button button--flex" target="_blank">View Publication <i class="uil uil-external-link-alt button__icon"></i></a>
         </div>
          <!-- Publication 5 -->
         <div class="publication__item">
             <h3 class="publication__title">Revealing function, interactions, and localization of peroxisomal proteins using deep learning-based approaches</h3>
+            <p class="publication__description">PhD Thesis, Wageningen University, 2022</p>
             <a href="https://doi.org/10.18174/635214" class="button button--flex" target="_blank">View Publication <i class="uil uil-external-link-alt button__icon"></i></a>
         </div>
         <!-- Add more publications as needed -->
