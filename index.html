@@ -50,10 +50,21 @@
             backdrop-filter: blur(5px);
         }
         
+        /* Header text color fix */
+        .nav__logo {
+            color: #333333; /* Dark gray color for the logo text */
+            font-weight: bold;
+        }
+        
         /* Blue colors only for clickable elements */
         .nav__link, .home__social-link, .button, .footer__link, .footer__social-link, .contact__link, .colabs__title a {
-            color: #4d94ff /* Dark blue for links */
+            color: #4d94ff; /* Dark blue for links */
             transition: color 0.3s ease;
+        }
+        
+        /* Home section text color fix */
+        .home__title, .home__subtitle, .home__description {
+            color: #333333; /* Dark gray color for home section text */
         }
         
         .nav__link:hover, .home__social-link:hover, .button:hover, .footer__link:hover, 
