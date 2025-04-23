@@ -52,14 +52,25 @@
         
         /* Header text color fix */
         .nav__logo {
-            color: #4d94ff; /* Dark gray color for the logo text */
+            color: #333333; /* Dark gray color for the logo text */
             font-weight: bold;
         }
         
-        /* Blue colors only for clickable elements */
-        .nav__link, .home__social-link, .button, .footer__link, .footer__social-link, .contact__link, .colabs__title a {
-            color: #4d94ff; /* Dark blue for links */
+        /* Navigation links color fix - dark by default */
+        .nav__link {
+            color: #333333; /* Dark gray color for navigation links by default */
             transition: color 0.3s ease;
+        }
+        
+        /* Blue colors only for clickable elements on hover */
+        .nav__link:hover, .home__social-link:hover, .button:hover, .footer__link:hover, 
+        .footer__social-link:hover, .contact__link:hover, .colabs__title a:hover {
+            color: #4d94ff; /* Lighter blue on hover */
+        }
+        
+        /* Active link styling */
+        .nav__link.active-link {
+            color: #4d94ff; /* Blue color for active link */
         }
         
         /* Home section text color fix */
@@ -67,13 +78,14 @@
             color: #333333; /* Dark gray color for home section text */
         }
         
-        .nav__link:hover, .home__social-link:hover, .button:hover, .footer__link:hover, 
-        .footer__social-link:hover, .contact__link:hover, .colabs__title a:hover {
-            color: #4d94ff; /* Lighter blue on hover */
+        /* Other clickable elements */
+        .home__social-link, .button, .footer__link, .footer__social-link, .contact__link, .colabs__title a {
+            color: #4d94ff; /* Blue for links */
+            transition: color 0.3s ease;
         }
         
         .button {
-            background-color: #4d94ff; /* Dark blue background for buttons */
+            background-color: #4d94ff; /* Blue background for buttons */
             color: #ffffff; /* White text for buttons */
             border-radius: 30px; /* More rounded buttons */
             padding: 0.75rem 1.5rem;
