@@ -53,6 +53,12 @@
             border-radius: 0.5rem;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            height: auto;
+            display: flex;
+            flex-direction: column;
         }
         
         .publication__item:hover {
@@ -60,20 +66,14 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
         }
         
-        /* Interactive elements */
-        .publication__item {
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-        }
-        
+        /* Fixed overlay styling to prevent text overflow */
         .publication__overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 102, 204, 0.8);
+            background-color: rgba(0, 102, 204, 0.9);
             color: white;
             display: flex;
             flex-direction: column;
@@ -83,13 +83,34 @@
             transition: opacity 0.3s ease;
             padding: 1rem;
             text-align: center;
+            overflow: auto; /* Add scrolling if content overflows */
+            box-sizing: border-box; /* Include padding in width/height calculation */
+        }
+        
+        .publication__overlay h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            max-width: 90%;
+        }
+        
+        .publication__overlay p {
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            max-width: 90%;
+            overflow-wrap: break-word;
+        }
+        
+        .publication__overlay span {
+            font-size: 0.8rem;
+            font-style: italic;
+            margin-top: 0.5rem;
         }
         
         .publication__item:hover .publication__overlay {
             opacity: 1;
         }
         
-        /* Tooltip styling */
+        /* Tooltip styling with fixed positioning */
         .tooltip {
             position: relative;
             display: inline-block;
@@ -110,11 +131,31 @@
             margin-left: -100px;
             opacity: 0;
             transition: opacity 0.3s;
+            font-size: 0.85rem;
+            line-height: 1.3;
+            max-height: 100px;
+            overflow-y: auto;
         }
         
         .tooltip:hover .tooltiptext {
             visibility: visible;
             opacity: 1;
+        }
+        
+        /* Responsive adjustments */
+        @media screen and (max-width: 768px) {
+            .publication__overlay h4 {
+                font-size: 1rem;
+            }
+            
+            .publication__overlay p {
+                font-size: 0.8rem;
+            }
+            
+            .tooltip .tooltiptext {
+                width: 150px;
+                margin-left: -75px;
+            }
         }
     </style>
 </head>
