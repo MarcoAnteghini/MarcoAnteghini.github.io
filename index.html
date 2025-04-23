@@ -6,16 +6,53 @@
     <title>Marco Anteghini - Bioinformatics Consultant</title>
     <link rel="stylesheet" href="assets/css/styles.css">
     <style>
-        /* Reset section backgrounds to white */
+        /* Global styles */
+        body {
+            background-color: #f5f5f7; /* Light gray background for the entire page */
+            color: #333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        /* Rounded and continuous section styling */
         .section {
-            padding: 2rem 0 4rem;
+            padding: 3rem 0 5rem;
             position: relative;
-            background-color: #ffffff; /* White background for all sections */
+            background-color: #f5f5f7; /* Light gray background for all sections */
+            border-radius: 30px; /* Rounded corners */
+            margin-bottom: -20px; /* Negative margin to create overlap */
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+        
+        /* Section dividers for visual continuity */
+        .section::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 10%;
+            width: 80%;
+            height: 2px;
+            background: linear-gradient(to right, transparent, rgba(0, 102, 204, 0.1), transparent);
+            border-radius: 50%;
+        }
+        
+        /* Last section doesn't need divider */
+        .footer::after, .contact::after {
+            display: none;
+        }
+        
+        /* Container styling for rounded edges */
+        .container {
+            border-radius: 20px;
+            padding: 1.5rem;
+            background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+            backdrop-filter: blur(5px);
         }
         
         /* Blue colors only for clickable elements */
         .nav__link, .home__social-link, .button, .footer__link, .footer__social-link, .contact__link, .colabs__title a {
-            color: #4d94ff; /* Dark blue for links */
+            color: #0066cc; /* Dark blue for links */
             transition: color 0.3s ease;
         }
         
@@ -25,17 +62,35 @@
         }
         
         .button {
-            background-color: #4d94ff; /* Dark blue background for buttons */
+            background-color: #0066cc; /* Dark blue background for buttons */
             color: #ffffff; /* White text for buttons */
+            border-radius: 30px; /* More rounded buttons */
+            padding: 0.75rem 1.5rem;
         }
         
         .button:hover {
             background-color: #4d94ff; /* Lighter blue on hover */
             color: #ffffff;
+            transform: translateY(-3px);
+            box-shadow: 0 7px 15px rgba(0, 102, 204, 0.2);
         }
         
         .section__title {
-            color: #333333; /* Dark gray for titles instead of blue */
+            color: #333333; /* Dark gray for titles */
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+        
+        .section__title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: #0066cc;
+            border-radius: 3px;
         }
         
         /* Publication image styling */
@@ -44,14 +99,14 @@
             max-height: 200px;
             object-fit: contain;
             margin-bottom: 1rem;
-            border-radius: 0.5rem;
+            border-radius: 15px; /* More rounded images */
         }
         
         .publication__item {
-            background-color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
             padding: 1.5rem;
-            border-radius: 0.5rem;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 20px; /* More rounded cards */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
             cursor: pointer;
             position: relative;
@@ -59,11 +114,28 @@
             height: auto;
             display: flex;
             flex-direction: column;
+            backdrop-filter: blur(5px);
         }
         
         .publication__item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Project item styling */
+        .project__item {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 1.5rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            margin-bottom: 1.5rem;
+            backdrop-filter: blur(5px);
+        }
+        
+        .project__item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
         
         /* Fixed overlay styling to prevent text overflow */
@@ -85,6 +157,7 @@
             text-align: center;
             overflow: auto; /* Add scrolling if content overflows */
             box-sizing: border-box; /* Include padding in width/height calculation */
+            border-radius: 20px; /* Match parent border-radius */
         }
         
         .publication__overlay h4 {
@@ -122,8 +195,8 @@
             background-color: #0066cc;
             color: #fff;
             text-align: center;
-            border-radius: 6px;
-            padding: 5px;
+            border-radius: 15px;
+            padding: 10px;
             position: absolute;
             z-index: 1;
             bottom: 125%;
@@ -135,6 +208,7 @@
             line-height: 1.3;
             max-height: 100px;
             overflow-y: auto;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
         
         .tooltip:hover .tooltiptext {
@@ -142,8 +216,52 @@
             opacity: 1;
         }
         
+        /* Collaboration items styling */
+        .colabs__item {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 1.5rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            margin-bottom: 1.5rem;
+            backdrop-filter: blur(5px);
+        }
+        
+        .colabs__item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Header styling */
+        .header {
+            background-color: rgba(245, 245, 247, 0.9); /* Match body background with transparency */
+            backdrop-filter: blur(10px);
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        /* Footer styling */
+        .footer {
+            background-color: rgba(245, 245, 247, 0.9);
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
+            padding-top: 3rem;
+            box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
         /* Responsive adjustments */
         @media screen and (max-width: 768px) {
+            .section {
+                border-radius: 20px;
+                padding: 2rem 0 3rem;
+            }
+            
+            .container {
+                border-radius: 15px;
+                padding: 1rem;
+            }
+            
             .publication__overlay h4 {
                 font-size: 1rem;
             }
@@ -155,6 +273,11 @@
             .tooltip .tooltiptext {
                 width: 150px;
                 margin-left: -75px;
+                border-radius: 10px;
+            }
+            
+            .publication__item, .project__item, .colabs__item {
+                border-radius: 15px;
             }
         }
     </style>
