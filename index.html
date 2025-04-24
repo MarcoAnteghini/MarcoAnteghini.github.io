@@ -50,59 +50,66 @@
             backdrop-filter: blur(5px);
         }
         
-        /* Header text color fix */
+        /* Header text color fix - STRONGER CONTRAST */
         .nav__logo {
-            color: #333333; /* Dark gray color for the logo text */
-            font-weight: bold;
+            color: #000000 !important; /* Black color for the logo text */
+            font-weight: bold !important;
+            text-shadow: 0px 0px 1px rgba(0,0,0,0.2) !important; /* Subtle text shadow for better visibility */
         }
         
-        /* Navigation links color fix - dark by default */
+        /* Navigation links color fix - BLACK with !important to override external styles */
         .nav__link {
-            color: #333333; /* Dark gray color for navigation links by default */
-            transition: color 0.3s ease;
+            color: #000000 !important; /* Black color for navigation links by default */
+            font-weight: 600 !important; /* Semi-bold for better visibility */
+            transition: color 0.3s ease !important;
+            text-shadow: 0px 0px 1px rgba(0,0,0,0.2) !important; /* Subtle text shadow for better visibility */
         }
         
         /* Blue colors only for clickable elements on hover */
         .nav__link:hover, .home__social-link:hover, .button:hover, .footer__link:hover, 
         .footer__social-link:hover, .contact__link:hover, .colabs__title a:hover {
-            color: #4d94ff; /* Lighter blue on hover */
+            color: #0066cc !important; /* Darker blue on hover for better contrast */
+            text-shadow: none !important;
         }
         
         /* Active link styling */
         .nav__link.active-link {
-            color: #4d94ff; /* Blue color for active link */
+            color: #0066cc !important; /* Darker blue color for active link */
+            font-weight: 700 !important; /* Bold for active link */
+            text-shadow: none !important;
         }
         
         /* Home section text color fix */
         .home__title, .home__subtitle, .home__description {
-            color: #333333; /* Dark gray color for home section text */
+            color: #000000 !important; /* Black color for home section text */
         }
         
         /* Other clickable elements */
-        .home__social-link, .button, .footer__link, .footer__social-link, .contact__link, .colabs__title a {
-            color: #4d94ff; /* Blue for links */
+        .home__social-link, .footer__link, .footer__social-link, .contact__link, .colabs__title a {
+            color: #0066cc !important; /* Darker blue for links */
             transition: color 0.3s ease;
         }
         
         .button {
-            background-color: #4d94ff; /* Blue background for buttons */
-            color: #ffffff; /* White text for buttons */
+            background-color: #0066cc !important; /* Darker blue background for buttons */
+            color: #ffffff !important; /* White text for buttons */
             border-radius: 30px; /* More rounded buttons */
             padding: 0.75rem 1.5rem;
         }
         
         .button:hover {
-            background-color: #4d94ff; /* Lighter blue on hover */
-            color: #ffffff;
+            background-color: #004d99 !important; /* Even darker blue on hover */
+            color: #ffffff !important;
             transform: translateY(-3px);
             box-shadow: 0 7px 15px rgba(0, 102, 204, 0.2);
         }
         
         .section__title {
-            color: #333333; /* Dark gray for titles */
+            color: #000000 !important; /* Black for titles */
             position: relative;
             display: inline-block;
             margin-bottom: 2rem;
+            font-weight: 700 !important;
         }
         
         .section__title::after {
@@ -112,7 +119,7 @@
             left: 0;
             width: 50px;
             height: 3px;
-            background-color: #4d94ff;
+            background-color: #0066cc !important;
             border-radius: 3px;
         }
         
