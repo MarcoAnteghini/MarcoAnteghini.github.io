@@ -4,57 +4,391 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mosaic – Bioinformatics Solutions</title>
+
 <link rel="stylesheet" href="assets/css/styles.css">
+
 <style>
-/* [CSS as provided; unchanged for brevity.] */
+        /* Global styles */
+        body {
+            background-color: #f5f5f7; /* Light gray background for the entire page */
+            color: #333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        /* Rounded and continuous section styling */
+        .section {
+            padding: 3rem 0 5rem;
+            position: relative;
+            background-color: #f5f5f7; /* Light gray background for all sections */
+            border-radius: 30px; /* Rounded corners */
+            margin-bottom: -20px; /* Negative margin to create overlap */
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+        
+        /* Section dividers for visual continuity */
+        .section::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 10%;
+            width: 80%;
+            height: 2px;
+            background: linear-gradient(to right, transparent, rgba(0, 102, 204, 0.1), transparent);
+            border-radius: 50%;
+        }
+        
+        /* Last section doesn't need divider */
+        .footer::after, .contact::after {
+            display: none;
+        }
+        
+        /* Container styling for rounded edges */
+        .container {
+            border-radius: 20px;
+            padding: 1.5rem;
+            background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+            backdrop-filter: blur(5px);
+        }
+        
+        /* Header text color fix - STRONGER CONTRAST */
+        .nav__logo {
+            color: #000000 !important; /* Black color for the logo text */
+            font-weight: bold !important;
+            text-shadow: 0px 0px 1px rgba(0,0,0,0.2) !important; /* Subtle text shadow for better visibility */
+        }
+        
+        /* Navigation links color fix - BLACK with !important to override external styles */
+        .nav__link {
+            color: #000000 !important; /* Black color for navigation links by default */
+            font-weight: 600 !important; /* Semi-bold for better visibility */
+            transition: color 0.3s ease !important;
+            text-shadow: 0px 0px 1px rgba(0,0,0,0.2) !important; /* Subtle text shadow for better visibility */
+        }
+        
+        /* Blue colors only for clickable elements on hover */
+        .nav__link:hover, .home__social-link:hover, .button:hover, .footer__link:hover, 
+        .footer__social-link:hover, .contact__link:hover, .colabs__title a:hover {
+            color: #0066cc !important; /* Darker blue on hover for better contrast */
+            text-shadow: none !important;
+        }
+        
+        /* Active link styling */
+        .nav__link.active-link {
+            color: #0066cc !important; /* Darker blue color for active link */
+            font-weight: 700 !important; /* Bold for active link */
+            text-shadow: none !important;
+        }
+        
+        /* Home section text color fix */
+        .home__title, .home__subtitle, .home__description {
+            color: #000000 !important; /* Black color for home section text */
+        }
+        
+        /* Other clickable elements */
+        .home__social-link, .footer__link, .footer__social-link, .contact__link, .colabs__title a {
+            color: #0066cc !important; /* Darker blue for links */
+            transition: color 0.3s ease;
+        }
+        
+        .button {
+            background-color: #0066cc !important; /* Darker blue background for buttons */
+            color: #ffffff !important; /* White text for buttons */
+            border-radius: 30px; /* More rounded buttons */
+            padding: 0.75rem 1.5rem;
+        }
+        
+        .button:hover {
+            background-color: #004d99 !important; /* Even darker blue on hover */
+            color: #ffffff !important;
+            transform: translateY(-3px);
+            box-shadow: 0 7px 15px rgba(0, 102, 204, 0.2);
+        }
+        
+        .section__title {
+            color: #000000 !important; /* Black for titles */
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
+            font-weight: 700 !important;
+        }
+        
+        .section__title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: #0066cc !important;
+            border-radius: 3px;
+        }
+        
+        /* Publication image styling */
+        .publication__img {
+            width: 100%;
+            max-height: 200px;
+            object-fit: contain;
+            margin-bottom: 1rem;
+            border-radius: 15px; /* More rounded images */
+        }
+        
+        .publication__item {
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+            padding: 1.5rem;
+            border-radius: 20px; /* More rounded cards */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            backdrop-filter: blur(5px);
+        }
+        
+        .publication__item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Project item styling */
+        .project__item {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 1.5rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            margin-bottom: 1.5rem;
+            backdrop-filter: blur(5px);
+        }
+        
+        .project__item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Service item styling - same as project cards */
+        .service__item {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 1.5rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            margin-bottom: 1.5rem;
+            backdrop-filter: blur(5px);
+        }
+        
+        .service__item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Fixed overlay styling to prevent text overflow */
+        .publication__overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 102, 204, 0.9);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            padding: 1rem;
+            text-align: center;
+            overflow: auto; /* Add scrolling if content overflows */
+            box-sizing: border-box; /* Include padding in width/height calculation */
+            border-radius: 20px; /* Match parent border-radius */
+        }
+        
+        .publication__overlay h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            max-width: 90%;
+        }
+        
+        .publication__overlay p {
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            max-width: 90%;
+            overflow-wrap: break-word;
+        }
+        
+        .publication__overlay span {
+            font-size: 0.8rem;
+            font-style: italic;
+            margin-top: 0.5rem;
+        }
+        
+        .publication__item:hover .publication__overlay {
+            opacity: 1;
+        }
+        
+        /* Tooltip styling with fixed positioning */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 200px;
+            background-color: #0066cc;
+            color: #fff;
+            text-align: center;
+            border-radius: 15px;
+            padding: 10px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -100px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 0.85rem;
+            line-height: 1.3;
+            max-height: 100px;
+            overflow-y: auto;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+        
+        /* Partner items styling */
+        .colabs__item {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 1.5rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            margin-bottom: 1.5rem;
+            backdrop-filter: blur(5px);
+        }
+        
+        .colabs__item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Header styling */
+        .header {
+            background-color: rgba(245, 245, 247, 0.9); /* Match body background with transparency */
+            backdrop-filter: blur(10px);
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        /* Footer styling */
+        .footer {
+            background-color: rgba(245, 245, 247, 0.9);
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
+            padding-top: 3rem;
+            box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        /* Responsive adjustments */
+        @media screen and (max-width: 768px) {
+            .section {
+                border-radius: 20px;
+                padding: 2rem 0 3rem;
+            }
+            
+            .container {
+                border-radius: 15px;
+                padding: 1rem;
+            }
+            
+            .publication__overlay h4 {
+                font-size: 1rem;
+            }
+            
+            .publication__overlay p {
+                font-size: 0.8rem;
+            }
+            
+            .tooltip .tooltiptext {
+                width: 150px;
+                margin-left: -75px;
+                border-radius: 10px;
+            }
+            
+            .publication__item, .project__item, .colabs__item, .service__item {
+                border-radius: 15px;
+            }
+        }
 </style>
 </head>
+
 <body>
+<!--==================== HEADER ====================-->
 <header class="header" id="header">
   <nav class="nav container">
     <a href="#" class="nav__logo">Mosaic</a>
+
     <div class="nav__menu" id="nav-menu">
       <ul class="nav__list grid">
-        <li class="nav__item"><a href="#home" class="nav__link active-link">Home</a></li>
-        <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
-        <li class="nav__item"><a href="#services" class="nav__link">Services</a></li>
-        <li class="nav__item"><a href="#projects" class="nav__link">Projects</a></li>
+        <li class="nav__item"><a href="#home"         class="nav__link active-link">Home</a></li>
+        <li class="nav__item"><a href="#about"        class="nav__link">About</a></li>
+        <li class="nav__item"><a href="#services"     class="nav__link">Services</a></li>
+        <li class="nav__item"><a href="#projects"     class="nav__link">Projects</a></li>
         <li class="nav__item"><a href="#publications" class="nav__link">Publications</a></li>
-        <li class="nav__item"><a href="#partners" class="nav__link">Partners</a></li>
-        <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+        <li class="nav__item"><a href="#partners"     class="nav__link">Partners</a></li>
+        <li class="nav__item"><a href="#contact"      class="nav__link">Contact</a></li>
       </ul>
       <i class="uil uil-times nav__close" id="nav-close"></i>
     </div>
+
     <div class="nav__btns">
       <i class="uil uil-moon change-theme" id="theme-button"></i>
       <div class="nav__toggle" id="nav-toggle"><i class="uil uil-apps"></i></div>
     </div>
   </nav>
 </header>
+
+<!--==================== MAIN ====================-->
 <main class="main">
-<!-- HOME -->
+
+<!--==================== HOME ====================-->
 <section class="home section" id="home">
   <div class="home__container container grid">
     <div class="home__content grid">
       <div class="home__social">
         <a href="https://www.linkedin.com/in/marco-anteghini/" class="home__social-link" target="_blank">LinkedIn</a>
-        <a href="https://github.com/MarcoAnteghini" class="home__social-link" target="_blank">GitHub</a>
+        <a href="https://github.com/MarcoAnteghini"            class="home__social-link" target="_blank">GitHub</a>
       </div>
       <div class="home__data">
         <h1 class="home__title">Mosaic</h1>
         <h3 class="home__subtitle">Expert Bioinformatics Solutions</h3>
-        <p class="home__description">Custom pipelines, AI/ML workflows, and data-driven insights for life-science research and industry.</p>
+        <p class="home__description">
+          Custom pipelines, AI/ML workflows, and data-driven insights for life-science research and industry.
+        </p>
         <a href="#contact" class="button button--flex">Contact Us <i class="uil uil-message button__icon"></i></a>
       </div>
     </div>
   </div>
 </section>
+
+<!--==================== ABOUT ====================-->
 <section class="about section" id="about">
   <h2 class="section__title">About</h2><span class="section__subtitle"></span>
   <div class="about__container container grid">
     <div class="about__data">
       <p class="about__description">
-        <strong>Mosaic</strong> develops custom bioinformatics pipelines, machine learning solutions, and interactive visualizations for universities, biotech companies, and digital health organizations. Led by <a href="https://www.linkedin.com/in/marco-anteghini/" target="_blank">Marco Anteghini, PhD</a>, we transform complex biological data into actionable insights.
+        <strong>Mosaic</strong> develops custom bioinformatics pipelines,
+        machine learning solutions, and interactive visualizations for universities, biotech companies, and
+        digital health organizations. We transform complex biological data into actionable insights.
       </p>
       <div class="about__info">
         <div><span class="about__info-title">05+</span><span class="about__info-name">Years<br>experience</span></div>
@@ -64,78 +398,146 @@
     </div>
   </div>
 </section>
+
+<!--==================== SERVICES ====================-->
 <section class="services section" id="services">
   <h2 class="section__title">Services</h2><span class="section__subtitle"></span>
   <div class="services__container container grid">
     <div class="service__item">
       <h3 class="service__title">Custom Bioinformatics Pipeline Development</h3>
-      <p class="service__description">End-to-end NGS, metagenomics, and proteomics workflows — automated, scalable, and reproducible.</p>
+      <p  class="service__description">
+        End-to-end NGS, metagenomics, and proteomics workflows — automated, scalable, and reproducible.
+      </p>
     </div>
     <div class="service__item">
       <h3 class="service__title">AI &amp; Machine Learning Solutions</h3>
-      <p class="service__description">Deep learning models for protein structure prediction, functional annotation, and risk scoring tailored to your research needs.</p>
+      <p  class="service__description">
+        Deep learning models for protein structure prediction, functional annotation, and risk scoring tailored to your research needs.
+      </p>
     </div>
     <div class="service__item">
       <h3 class="service__title">Data Analysis &amp; Visualization</h3>
-      <p class="service__description">Interactive dashboards and publication-ready figures that transform complex data into clear, actionable insights.</p>
+      <p  class="service__description">
+        Interactive dashboards and publication-ready figures that transform complex data into clear, actionable insights.
+      </p>
     </div>
     <div class="service__item">
       <h3 class="service__title">Bioinformatics Training &amp; Workshops</h3>
-      <p class="service__description">Hands-on training in Python, R, and workflow best practices to empower your team with computational skills.</p>
+      <p  class="service__description">
+        Hands-on training in Python, R, and workflow best practices to empower your team with computational skills.
+      </p>
     </div>
   </div>
 </section>
-<!-- PROJECTS -->
+
+<!--==================== PROJECTS ====================-->
 <section class="projects section" id="projects">
     <h2 class="section__title">Projects</h2>
     <span class="section__subtitle"></span>
     <div class="projects__container container grid">
+        <!-- Project 1 -->
         <div class="project__item">
-            <p class="project__description">Development of open-access computational platforms for rare disease research, microbial community analysis, and sustainable bio-manufacturing. Projects involve genomic data analysis, workflow design, and methods for machine learning-enabled variant prediction and health data interpretation.</p>
+            <h3 class="project__title">Rare Disease Risk Assessment</h3>
+            <p class="project__description">Development of computational platforms for evaluating pathogenic genetic variants in rare neurodevelopmental diseases.</p>
+        </div>
+        <!-- Project 2 -->
+        <div class="project__item">
+            <h3 class="project__title">Gut Microbiota Analysis</h3>
+            <p class="project__description">Reproducible pipelines for taxonomic profiling and dysbiosis detection in human gut bacteria.</p>
+        </div>
+         <!-- Project 3 -->
+        <div class="project__item">
+            <h3 class="project__title">Sustainable Bio-Manufacturing</h3>
+            <p class="project__description">Computational biology solutions for sustainable bio-manufacturing initiatives.</p>
         </div>
     </div>
 </section>
-<!-- PUBLICATIONS -->
+
+<!--==================== PUBLICATIONS ====================-->
 <section class="publications section" id="publications">
     <h2 class="section__title">Publications</h2>
     <span class="section__subtitle"></span>
     <div class="publications__container container grid">
+        <!-- Publication 1 -->
         <div class="publication__item" onclick="window.open('https://doi.org/10.1016/j.compbiomed.2025.110064', '_blank')">
+            <img src="assets/img/hdwgt.jpg" alt="AI applications to biological networks and sequences" class="publication__img">
             <h3 class="publication__title">How did we get there? AI applications to biological networks and sequences</h3>
             <p class="publication__description">Published in Computational Biology and Medicine, April 2025</p>
+            <a href="https://doi.org/10.1016/j.compbiomed.2025.110064" class="button button--flex" target="_blank">View Publication <i class="uil uil-external-link-alt button__icon"></i></a>
+            <div class="publication__overlay">
+                <h4>AI applications to biological networks and sequences</h4>
+                <p>This paper explores how AI is driving biomedical science, enabling the processing of large datasets and prediction of complex biological phenomena.</p>
+                <span>Click to read more</span>
+            </div>
         </div>
+        <!-- Publication 2 -->
         <div class="publication__item" onclick="window.open('https://doi.org/10.3390/ijms22126409', '_blank')">
+            <img src="assets/img/inpero.png" alt="In-pero: Deep learning for peroxisomal proteins" class="publication__img" onerror="this.src='assets/img/publication_placeholder.png'; this.onerror=null;">
             <h3 class="publication__title">In-pero: Exploiting deep learning embeddings of protein sequences to predict the localisation of peroxisomal proteins</h3>
             <p class="publication__description">Published in International Journal of Molecular Sciences, 2021</p>
+            <a href="https://doi.org/10.3390/ijms22126409" class="button button--flex" target="_blank">View Publication <i class="uil uil-external-link-alt button__icon"></i></a>
+            <div class="publication__overlay">
+                <h4>In-pero: Deep learning for protein localization</h4>
+                <p>This research uses deep learning embeddings to predict the localization of peroxisomal proteins with high accuracy.</p>
+                <span>Click to read more</span>
+            </div>
         </div>
+        <!-- Publication 3 -->
         <div class="publication__item" onclick="window.open('https://doi.org/10.1016/j.csbj.2022.11.058', '_blank')">
+            <img src="assets/img/organelX.jpg" alt="OrganelX web server" class="publication__img">
             <h3 class="publication__title">OrganelX web server for sub-peroxisomal and sub-mitochondrial protein localization and peroxisomal target signal detection</h3>
             <p class="publication__description">Published in Computational and Structural Biotechnology Journal, 2022</p>
+            <a href="https://doi.org/10.1016/j.csbj.2022.11.058" class="button button--flex" target="_blank">View Publication <i class="uil uil-external-link-alt button__icon"></i></a>
+            <div class="publication__overlay">
+                <h4>OrganelX: Advanced protein localization</h4>
+                <p>A web server for precise sub-organelle protein localization and peroxisomal target signal detection using machine learning.</p>
+                <span>Click to read more</span>
+            </div>
         </div>
+        <!-- Publication 4 -->
         <div class="publication__item" onclick="window.open('https://doi.org/10.1002/jcb.30490', '_blank')">
+            <img src="assets/img/portpred.jpg" alt="PortPred: Transporter protein prediction" class="publication__img">
             <h3 class="publication__title">PortPred: exploiting deep learning embeddings of amino acid sequences for the identification of transporter proteins and their substrates</h3>
             <p class="publication__description">Published in Journal of Cellular Biochemistry, 2023</p>
+            <a href="https://doi.org/10.1002/jcb.30490" class="button button--flex" target="_blank">View Publication <i class="uil uil-external-link-alt button__icon"></i></a>
+            <div class="publication__overlay">
+                <h4>PortPred: Transporter protein prediction</h4>
+                <p>This tool uses deep learning embeddings to identify transporter proteins and predict their substrates with high accuracy.</p>
+                <span>Click to read more</span>
+            </div>
         </div>
+         <!-- Publication 5 -->
         <div class="publication__item" onclick="window.open('https://doi.org/10.18174/635214', '_blank')">
+            <img src="assets/img/infographic.jpeg" alt="Thesis on peroxisomal proteins" class="publication__img">
             <h3 class="publication__title">Revealing function, interactions, and localization of peroxisomal proteins using deep learning-based approaches</h3>
             <p class="publication__description">PhD Thesis, Wageningen University, 2022</p>
+            <a href="https://doi.org/10.18174/635214" class="button button--flex" target="_blank">View Publication <i class="uil uil-external-link-alt button__icon"></i></a>
+            <div class="publication__overlay">
+                <h4>PhD Thesis: Deep learning for peroxisomal proteins</h4>
+                <p>This comprehensive thesis explores how deep learning approaches can reveal function, interactions, and localization of peroxisomal proteins.</p>
+                <span>Click to read more</span>
+            </div>
         </div>
     </div>
     <div class="google-scholar">
         <a href="https://scholar.google.com/citations?user=Vzhq60kAAAAJ&hl=it" class="button button--flex" target="_blank">View Full Publication List <i class="uil uil-external-link-alt button__icon"></i></a>
     </div>
 </section>
-<!-- PARTNERS -->
+        
+<!--==================== PARTNERS ====================-->
 <section class="colabs section" id="partners">
     <h2 class="section__title">Partners</h2>
     <span class="section__subtitle"></span>
     <div class="colabs__container container grid">
         <div class="colabs__item">
-            <p class="colabs__description">Collaborations and partnerships span academia, industry, and training organizations working on innovative solutions in computational biology and digital health.</p>
+            <p class="colabs__description">We collaborate with academic institutions, biotech companies, and digital health organizations to advance computational biology and bioinformatics research.</p>
         </div>
     </div>
 </section>
+
 </main>
+
+<!--==================== CONTACT ====================-->
 <section class="contact section" id="contact">
   <h2 class="section__title">Contact</h2><span class="section__subtitle"></span>
   <div class="contact__container container grid">
@@ -144,30 +546,36 @@
       <a href="mailto:info@bio-mosaic.com" class="contact__link">info@bio-mosaic.com</a>
     </div>
     <div class="contact__info">
-      <h3 class="contact__title">Principal Contact</h3>
-      <a href="https://www.linkedin.com/in/marco-anteghini/" class="contact__link" target="_blank">Marco Anteghini, PhD — LinkedIn</a>
+      <h3 class="contact__title">LinkedIn</h3>
+      <a href="https://www.linkedin.com/in/marco-anteghini/" class="contact__link" target="_blank">
+        Connect with us
+      </a>
     </div>
   </div>
 </section>
+
+<!--==================== FOOTER ====================-->
 <footer class="footer">
   <div class="footer__container container">
     <h1 class="footer__title">Mosaic</h1>
     <ul class="footer__list">
-      <li><a href="#about" class="footer__link">About</a></li>
-      <li><a href="#services" class="footer__link">Services</a></li>
-      <li><a href="#projects" class="footer__link">Projects</a></li>
+      <li><a href="#about"        class="footer__link">About</a></li>
+      <li><a href="#services"     class="footer__link">Services</a></li>
+      <li><a href="#projects"     class="footer__link">Projects</a></li>
       <li><a href="#publications" class="footer__link">Publications</a></li>
-      <li><a href="#partners" class="footer__link">Partners</a></li>
-      <li><a href="#contact" class="footer__link">Contact</a></li>
+      <li><a href="#partners"     class="footer__link">Partners</a></li>
+      <li><a href="#contact"      class="footer__link">Contact</a></li>
     </ul>
     <div class="footer__social">
       <a href="https://www.linkedin.com/in/marco-anteghini/" class="footer__social-link" target="_blank"><i class="uil uil-linkedin-alt"></i></a>
-      <a href="https://github.com/MarcoAnteghini" class="footer__social-link" target="_blank"><i class="uil uil-github-alt"></i></a>
+      <a href="https://github.com/MarcoAnteghini"            class="footer__social-link" target="_blank"><i class="uil uil-github-alt"></i></a>
     </div>
     <span class="footer__copy">© 2025 Mosaic Bioinformatics. All rights reserved.</span>
   </div>
   <a href="#" class="scrollup" id="scroll-up"><i class="uil uil-arrow-up scrollup__icon"></i></a>
 </footer>
+
+<!--==================== JS BUNDLE ====================-->
 <script src="assets/js/main.js"></script>
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 </body>
