@@ -1,0 +1,32 @@
+---
+layout: default
+title: Blog | Mosaic Bioinformatics
+description: Articles and notes on bioinformatics, machine learning, and reproducible data work by Marco Anteghini, PhD.
+permalink: /blog/
+---
+<section class="page-head">
+  <div class="wrap">
+    <span class="section__eyebrow">Blog</span>
+    <h1 class="page-head__title">Articles &amp; notes</h1>
+    <p class="page-head__lead">Writing on bioinformatics, machine learning, and reproducible data work. New posts appear here first, then get reposted on LinkedIn.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    {% if site.posts.size > 0 %}
+    <div class="post-list">
+      {% for post in site.posts %}
+      <article class="card post-card" onclick="window.location='{{ post.url | relative_url }}'">
+        <span class="post-card__date">{{ post.date | date: "%B %-d, %Y" }}</span>
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.excerpt | strip_html | truncate: 170 }}</p>
+        <a class="pub__link" href="{{ post.url | relative_url }}">Read article <i class="uil uil-arrow-right"></i></a>
+      </article>
+      {% endfor %}
+    </div>
+    {% else %}
+    <p class="section__lead">No articles published yet. Check back soon.</p>
+    {% endif %}
+  </div>
+</section>

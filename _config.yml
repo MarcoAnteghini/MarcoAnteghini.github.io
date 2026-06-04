@@ -1,0 +1,21 @@
+title: Mosaic Bioinformatics
+description: >-
+  Mosaic Bioinformatics, the independent consulting practice of Marco Anteghini, PhD.
+  Reproducible bioinformatics pipelines, machine learning, and data analysis for
+  life-science research and industry.
+author: Marco Anteghini
+url: "https://bio-mosaic.com"
+baseurl: ""
+
+markdown: kramdown
+permalink: /blog/:year/:month/:day/:title/
+
+# Show post excerpts on the blog list
+excerpt_separator: "<!--more-->"
+
+exclude:
+  - README.md
+  - "stronger_contrast_index (1).html"
+  - .ipynb_checkpoints
+  - "**/.ipynb_checkpoints"
+  - assets/css/.ipynb_checkpoints

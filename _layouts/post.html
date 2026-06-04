@@ -1,0 +1,24 @@
+---
+layout: default
+---
+<section class="page-head">
+  <div class="wrap">
+    <span class="section__eyebrow">Article</span>
+    <h1 class="page-head__title">{{ page.title }}</h1>
+    <p class="page-head__meta">{{ page.date | date: "%B %-d, %Y" }}{% if page.author %} · {{ page.author }}{% endif %}</p>
+  </div>
+</section>
+
+<article class="section">
+  <div class="wrap post">
+    <div class="post__content">
+      {{ content }}
+    </div>
+    {% if page.linkedin %}
+    <p class="post__repost">Also shared on <a href="{{ page.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>.</p>
+    {% endif %}
+    <p style="margin-top:2.5rem">
+      <a href="{{ '/blog/' | relative_url }}" class="btn btn--ghost"><i class="uil uil-arrow-left"></i> All articles</a>
+    </p>
+  </div>
+</article>
