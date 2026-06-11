@@ -65,8 +65,8 @@ layout: default
   </div>
 </article>
 
-<!-- html2pdf.js for client-side PDF generation -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!-- html2pdf.js for client-side PDF generation (no SRI to avoid silent block) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 <script>
   document.getElementById('downloadPdfBtn').addEventListener('click', function () {
     var btn = this;
@@ -79,6 +79,15 @@ layout: default
 
     var element = document.getElementById('postContent');
 
+    // Fallback: if html2pdf didn't load, use browser print dialog
+    if (typeof html2pdf === 'undefined') {
+      alert('PDF library could not load. Using browser print instead — choose "Save as PDF" in the print dialog.');
+      btn.disabled = false;
+      btn.innerHTML = '<i class="uil uil-file-download"></i> Download PDF';
+      window.print();
+      return;
+    }
+
     var opt = {
       margin:       [15, 18, 15, 18],
       filename:     filename,
@@ -88,9 +97,16 @@ layout: default
       pagebreak:    { mode: ['avoid-all', 'css', 'legacy'] }
     };
 
-    html2pdf().set(opt).from(element).save().then(function () {
-      btn.disabled = false;
-      btn.innerHTML = '<i class="uil uil-file-download"></i> Download PDF';
-    });
+    html2pdf().set(opt).from(element).save()
+      .then(function () {
+        btn.disabled = false;
+        btn.innerHTML = '<i class="uil uil-file-download"></i> Download PDF';
+      })
+      .catch(function (err) {
+        console.error('PDF generation failed:', err);
+        btn.disabled = false;
+        btn.innerHTML = '<i class="uil uil-file-download"></i> Download PDF';
+        alert('PDF generation failed. Try using your browser\'s Print → Save as PDF instead.');
+      });
   });
 </script>
