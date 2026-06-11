@@ -1,3 +1,11 @@
+---
+layout: post
+title: "Dual Use in AI-Driven Biotechnology: How Should We Govern It?"
+date: 2026-06-11
+author: Marco Anteghini, PhD
+description: "AI is accelerating biotechnology—but the same tools that make biological knowledge easier to access can also lower the barrier to misuse. This article explores biosecurity-by-design as a practical governance framework."
+---
+
 # Dual Use in AI-Driven Biotechnology: How Should We Govern It?
 
 Artificial intelligence is rapidly becoming part of the operational infrastructure of the life sciences, including biotechnology and related fields. In bioinformatics, for example, it helps interpret genomes, predict protein structure, function and localisation, mine the literature, prioritise targets, and automate complex analytical workflows [1]. In biomanufacturing, it promises smarter strain selection, better process monitoring, more efficient Design-Build-Test-Learn cycles, and eventually semi-autonomous optimisation of biological production systems.
