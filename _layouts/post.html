@@ -1,6 +1,43 @@
 ---
 layout: default
 ---
+<style>
+  .pdf-btn-wrap {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1.5rem;
+  }
+  .btn--pdf {
+    display: inline-flex;
+    align-items: center;
+    gap: .45rem;
+    padding: .55rem 1.25rem;
+    border-radius: 6px;
+    font-size: .875rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: 2px solid var(--sky, #3b9edd);
+    background: transparent;
+    color: var(--sky, #3b9edd);
+    transition: background .2s, color .2s, transform .2s, box-shadow .2s;
+    text-decoration: none;
+  }
+  .btn--pdf:hover {
+    background: var(--sky-soft, #e7f4fc);
+    border-color: var(--sky, #3b9edd);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(59,158,221,.2);
+  }
+  .btn--pdf i { font-size: 1.1rem; }
+
+  /* Hide chrome elements during PDF export */
+  @media print {
+    .header, .footer, .pdf-btn-wrap, .post__repost, .back-link { display: none !important; }
+    body { background: #fff !important; }
+    article.section { padding: 0 !important; }
+    .wrap { max-width: 100% !important; padding: 0 !important; }
+  }
+</style>
 <section class="page-head">
   <div class="wrap">
     <span class="section__eyebrow">Article</span>
@@ -11,14 +48,49 @@ layout: default
 
 <article class="section">
   <div class="wrap post">
-    <div class="post__content">
+    <div class="pdf-btn-wrap">
+      <button id="downloadPdfBtn" class="btn--pdf" aria-label="Download PDF">
+        <i class="uil uil-file-download"></i> Download PDF
+      </button>
+    </div>
+    <div class="post__content" id="postContent">
       {{ content }}
     </div>
     {% if page.linkedin %}
     <p class="post__repost">Also shared on <a href="{{ page.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>.</p>
     {% endif %}
-    <p style="margin-top:2.5rem">
+    <p style="margin-top:2.5rem" class="back-link">
       <a href="{{ '/blog/' | relative_url }}" class="btn btn--ghost"><i class="uil uil-arrow-left"></i> All articles</a>
     </p>
   </div>
 </article>
+
+<!-- html2pdf.js for client-side PDF generation -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+  document.getElementById('downloadPdfBtn').addEventListener('click', function () {
+    var btn = this;
+    btn.disabled = true;
+    btn.innerHTML = '<i class="uil uil-spinner-alt"></i> Generating…';
+
+    var title = {{ page.title | jsonify }};
+    var date  = '{{ page.date | date: "%Y-%m-%d" }}';
+    var filename = date + '-' + title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') + '.pdf';
+
+    var element = document.getElementById('postContent');
+
+    var opt = {
+      margin:       [15, 18, 15, 18],
+      filename:     filename,
+      image:        { type: 'jpeg', quality: 0.97 },
+      html2canvas:  { scale: 2, useCORS: true, logging: false },
+      jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
+      pagebreak:    { mode: ['avoid-all', 'css', 'legacy'] }
+    };
+
+    html2pdf().set(opt).from(element).save().then(function () {
+      btn.disabled = false;
+      btn.innerHTML = '<i class="uil uil-file-download"></i> Download PDF';
+    });
+  });
+</script>
