@@ -4,9 +4,18 @@ title: "Dual Use in AI-Driven Biotechnology: How Should We Govern It?"
 date: 2026-06-11
 author: Marco Anteghini, PhD
 description: "AI is accelerating biotechnology—but the same tools that make biological knowledge easier to access can also lower the barrier to misuse. This article explores biosecurity-by-design as a practical governance framework."
+doi: "10.5281/zenodo.20643953"
+zenodo: "https://zenodo.org/records/20643953"
 ---
 
 # Dual Use in AI-Driven Biotechnology: How Should We Govern It?
+
+<p class="post-doi">
+  <a href="https://doi.org/10.5281/zenodo.20643953" target="_blank" rel="noopener" title="View on Zenodo">
+    <img src="https://zenodo.org/badge/DOI/10.5281/zenodo.20643953.svg" alt="DOI: 10.5281/zenodo.20643953" style="vertical-align:middle; margin-right:.4rem;">
+  </a>
+  Also archived on <a href="https://zenodo.org/records/20643953" target="_blank" rel="noopener">Zenodo</a> · DOI: <a href="https://doi.org/10.5281/zenodo.20643953" target="_blank" rel="noopener"><code>10.5281/zenodo.20643953</code></a>
+</p>
 
 Artificial intelligence is rapidly becoming part of the operational infrastructure of the life sciences, including biotechnology and related fields. In bioinformatics, for example, it helps interpret genomes, predict protein structure, function and localisation, mine the literature, prioritise targets, and automate complex analytical workflows [1]. In biomanufacturing, it promises smarter strain selection, better process monitoring, more efficient Design-Build-Test-Learn cycles, and eventually semi-autonomous optimisation of biological production systems.
 
@@ -193,3 +202,71 @@ Biotechnology is already digital, automated and AI-assisted. The safest version 
 [9] European Commission, AI Act Service Desk. (n.d.). *Article 12: Record-keeping*. https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-12
 
 [10] European Commission, AI Act Service Desk. (n.d.). *Article 19: Automatically generated logs*. https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-19
+
+---
+
+<div class="citation-block">
+  <h2 class="citation-block__heading">How to cite this article</h2>
+  <p class="citation-block__style-label">APA</p>
+  <div class="citation-block__text" id="citationText">Anteghini, M. (2026). <em>Dual use in AI-driven biotechnology: How should we govern it?</em> Mosaic Bioinformatics. <a href="https://doi.org/10.5281/zenodo.20643953" target="_blank" rel="noopener">https://doi.org/10.5281/zenodo.20643953</a></div>
+  <button class="citation-block__copy" id="copyCiteBtn" onclick="(function(){var t='Anteghini, M. (2026). Dual use in AI-driven biotechnology: How should we govern it? Mosaic Bioinformatics. https://doi.org/10.5281/zenodo.20643953';navigator.clipboard.writeText(t).then(function(){var b=document.getElementById(\'copyCiteBtn\');b.textContent=\'✓ Copied\';setTimeout(function(){b.textContent=\'Copy citation\';},2000);});})()" aria-label="Copy citation to clipboard">Copy citation</button>
+  <p class="citation-block__doi">Archived on <a href="https://zenodo.org/records/20643953" target="_blank" rel="noopener">Zenodo</a> · DOI: <a href="https://doi.org/10.5281/zenodo.20643953" target="_blank" rel="noopener"><code>10.5281/zenodo.20643953</code></a></p>
+</div>
+
+<style>
+.citation-block {
+  margin-top: 2.5rem;
+  padding: 1.5rem 1.75rem;
+  border-left: 4px solid var(--sky, #3b9edd);
+  background: var(--sky-soft, #f0f8ff);
+  border-radius: 0 8px 8px 0;
+  font-size: .9rem;
+}
+.citation-block__heading {
+  margin: 0 0 .75rem;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+  color: var(--navy, #03347a);
+  border: none;
+  padding: 0;
+}
+.citation-block__style-label {
+  margin: 0 0 .35rem;
+  font-size: .75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--sky, #3b9edd);
+}
+.citation-block__text {
+  background: #fff;
+  border: 1px solid #d1e8f7;
+  border-radius: 6px;
+  padding: .75rem 1rem;
+  line-height: 1.65;
+  color: #222;
+  margin-bottom: .75rem;
+}
+.citation-block__copy {
+  display: inline-block;
+  padding: .35rem .9rem;
+  border-radius: 5px;
+  border: 1.5px solid var(--sky, #3b9edd);
+  background: transparent;
+  color: var(--sky, #3b9edd);
+  font-size: .8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .2s, color .2s;
+  margin-bottom: .85rem;
+}
+.citation-block__copy:hover { background: var(--sky, #3b9edd); color: #fff; }
+.citation-block__doi {
+  margin: 0;
+  font-size: .82rem;
+  color: #555;
+}
+.citation-block__doi a { color: var(--sky, #3b9edd); }
+</style>
